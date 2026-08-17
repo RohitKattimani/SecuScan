@@ -47,6 +47,7 @@ class CacheClient:
 
     async def delete_prefix(self, prefix: str):
         """Delete all keys starting with prefix."""
+        #init_prefix
         to_delete = [k for k in self._data.keys() if k.startswith(prefix)]
         for k in to_delete:
             self._data.pop(k, None)
